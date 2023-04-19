@@ -624,7 +624,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: color var(--typical-transition),
-  shadow var(--typical-transition),
+  box-shadow var(--typical-transition),
   background var(--typical-transition),
   border-color  var(--typical-transition);
 
