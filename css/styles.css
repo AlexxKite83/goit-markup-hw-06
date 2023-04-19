@@ -743,8 +743,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  min-width: 400px;
+  width: 408px;
   min-height: 576px;
+  padding: 24px;
+  padding-top: 72px;
 
   background-color: var(--modal-background-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -779,18 +781,194 @@ body {
   transform: translate(-50%, -50%);
   fill: var(--dark-color);
 
-  transition: fill var(--typical-transition);
+  transition: fill var(--color-navy-blue);
 }
 
 /** Hover and focus for modal button  */
 .modal-button:hover,
 .modal-button:focus {
-  background-color: var(--pressed-state-color);
+  background-color: var(--color-ocean);
   border-color: transparent;
 }
 
 /** Hover and focus for modal icon  */
 .modal-button:hover .modal-button-icon,
 .modal-button:focus .modal-button-icon {
-  fill: var(--white-background-color);
+  fill: var(--color-white);
+}
+
+/**=============== Modal form ======================================================================*/
+.modal-text {
+  margin-bottom: 16px;
+  text-align: center;
+
+  font-weight: 500;
+  color: var(--color-navy-blue);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.modal-form-field {
+  margin-bottom: 8px;
+}
+
+.modal-form-description {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: var(--color-lite-slate);
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  display: block;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+
+  color: var(--color-navy-blue);
+  border: 1px solid var(--color-navy-blue);
+  border-radius: 4px;
+
+  transition: border-color var(--typical-transition);
+}
+
+/** Focus for modal input */
+.modal-form-input:focus {
+  border-color: var(--color-iris);
+  outline: none;
+}
+
+/** Transition for modal icon */
+.input-icon {
+  transition: fill var(--typical-transition);
+}
+
+/** Focus for modal icon*/
+.modal-form-input:focus+.input-icon {
+  fill: var(--color-iris);
+}
+
+/** Icon from modal */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--color-navy-blue);
+}
+
+/** Textarea from modal */
+label:nth-last-child(3) {
+  margin-bottom: 16px;
+}
+
+.modal-form-message {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  resize: none;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+
+  color: var(--dark-color);
+  border: 1px solid var(--color-navy-blue);
+  border-radius: 4px;
+
+  transition: border-color var(--typical-transition);
+}
+
+.modal-form-message::placeholder {
+  color: var(--color-navy-blue);
+}
+
+/** Focus for modal textarea */
+.modal-form-message:focus {
+  border-color: var(--color-iris);
+  outline: none;
+}
+
+/** Policy from modal */
+.modal-form-policy-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: var(--subtle-text-color);
+}
+
+/** Custom checkbox from modal */
+.modal-form-policy-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+
+  border: 1px solid var(--color-navy-blue);
+  border-radius: 2px;
+  cursor: pointer;
+
+  transition:
+      background-color var(--typical-transition),
+      background-image var(--typical-transition);
+}
+
+/** Active checkbox modal form */
+.modal-form-policy:checked+.modal-form-policy-checkbox {
+  background-color: var(--color-ocean);
+  border-color: var(--color-ocean);
+}
+
+/** Іcon in checkbox modal form*/
+.checkbox-icon {
+  opacity: 0;
+  fill: var(--color-cloud);
+}
+
+/** Active icon in checkbox modal form */
+.modal-form-policy:checked+.modal-form-policy-checkbox>.checkbox-icon {
+  opacity: 1;
+}
+
+.modal-form-policy-field>a {
+  text-decoration: underline;
+  color: var(--color-iris);
+}
+
+/** Button 'Send' */
+.modal-form-submit {
+  align-self: center;
+  padding: 16px 32px;
+
+  min-width: 169px;
+  min-height: 56px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-iris);
+  color: var(--color-white);
+
+  transition: background-color var(--typical-transition);
+}
+
+/** Hover and focus for button in hero section */
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: var(--color-ocean);
 }
